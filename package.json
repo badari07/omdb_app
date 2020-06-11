@@ -1,0 +1,19 @@
+{
+  "name": "omdb_app",
+  "version": "1.0.0",
+  "description": "omdb_app",
+  "main": "index.js",
+  "repository": "https://github.com/badari07/omdb_app.git",
+  "author": "badari07 <badari0793@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bootstrap": "^4.5.0",
+    "gatsby": "^2.23.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
