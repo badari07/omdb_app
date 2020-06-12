@@ -15,8 +15,6 @@ const Pagination = (props) => {
       if (data.Response) {
         props.setData(data.Search);
       }
-    } else {
-      alert("please type movie name");
     }
   };
 
@@ -32,7 +30,7 @@ const Pagination = (props) => {
         <nav aria-label="Page navigation example">
           <ul className="pagination justify-content-end">
             {pg.map((p, ind) => (
-              <li className="page-item">
+              <li key={ind} className="page-item">
                 <a className="page-link" href="#" id={p} onClick={onPageClick}>
                   {p}
                 </a>

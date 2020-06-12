@@ -69,11 +69,14 @@ const FirstTab = (props) => {
           page={page}
           setPage={setPage}
         />
-        {data.map((info) => (
-          <MovieInfo key={info.imdbIb} data={info} />
-        ))}
+        <MovieInfo data={data} />
       </div>
     );
+  }
+  {
+    /* {data.map((info) => (
+          <MovieInfo key={info.imdbIb} data={info} />
+        ))} */
   }
   return (
     <div>
@@ -105,19 +108,11 @@ const FirstTab = (props) => {
         </label>
         <input type="submit" value="Search" />
       </form>
-      <Pagination
-        movie={movie}
-        year={year}
-        data={data}
-        setData={setData}
-        page={page}
-        setPage={setPage}
-      />
       <div>
         {data === undefined ? (
           <div>Nothing to see</div>
         ) : (
-          <div>Search to see</div>
+          <h1>Search to see</h1>
         )}
       </div>
     </div>
