@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Axios from "axios";
 import MovieInfo from "./MovieInfo";
 import Pagination from "../components/Pagination";
+import { Link } from "gatsby";
 
 const FirstTab = (props) => {
   const [movie, setMovie] = useState("");
@@ -70,14 +71,19 @@ const FirstTab = (props) => {
           setPage={setPage}
         />
         <MovieInfo data={data} />
+        <Link
+          to="/dashboard/login/"
+          state={{
+            modal: true,
+          }}
+          data={data}
+        >
+          More Info about movie
+        </Link>
       </div>
     );
   }
-  {
-    /* {data.map((info) => (
-          <MovieInfo key={info.imdbIb} data={info} />
-        ))} */
-  }
+
   return (
     <div>
       <form onSubmit={onSubmit}>

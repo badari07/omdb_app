@@ -8,9 +8,9 @@ const Header = () => {
         <Link to="/">Omdb App</Link>
       </header>
       <nav>
-        <Link to="/first">first</Link>
+        <Link to="/dashboard/first">first</Link>
 
-        <Link to="/second">second</Link>
+        <Link to="/dashboard/second">second</Link>
       </nav>
     </div>
   );

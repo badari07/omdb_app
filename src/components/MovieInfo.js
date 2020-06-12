@@ -24,7 +24,7 @@ const MovieInfo = (props) => {
             <tr>
               <th scope="col">Title</th>
               <th scope="col">Year</th>
-              <th scope="col">imdbId</th>
+              <th scope="col">imdbID</th>
               <th scope="col">Type</th>
             </tr>
           </thead>
