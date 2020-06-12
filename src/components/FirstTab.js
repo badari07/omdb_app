@@ -1,19 +1,14 @@
 import React, { useState } from "react";
 import Axios from "axios";
 import MovieInfo from "./MovieInfo";
-import { useEffect } from "react";
-import Pagination from "./Pagination";
+import Pagination from "../components/Pagination";
 
-const FirstTab = () => {
+const FirstTab = (props) => {
   const [movie, setMovie] = useState("");
   const [year, setYear] = useState(null);
   const [data, setData] = useState([]);
+  const [page, setPage] = useState(null);
   console.log(data);
-
-  useEffect(() => {
-    setMovie("");
-    setYear(null);
-  }, []);
 
   const onMovieChange = (e) => {
     setMovie(e.target.value);
@@ -29,11 +24,57 @@ const FirstTab = () => {
       ` http://www.omdbapi.com/?i=tt3896198&apikey=d723c953&s=${movie}&y=${year}&plot=full`
     );
     console.log(data);
-    setData(data.Search);
-    setMovie("");
-    setYear(null);
+    if (data.Response) {
+      setData(data.Search);
+      setPage(data.totalResults);
+    }
   };
 
+  if (data !== undefined && data.length > 0) {
+    return (
+      <div>
+        <form onSubmit={onSubmit}>
+          <label htmlFor="movie">
+            Movie Title:
+            <input
+              required
+              type="text"
+              name="movie title"
+              id="movie"
+              placeholder="movie title"
+              value={movie}
+              onChange={onMovieChange}
+            />
+          </label>
+          <label htmlFor="year">
+            {" "}
+            Year:
+            <input
+              required
+              type="number"
+              name="movie year"
+              id="year"
+              placeholder="year"
+              value={year}
+              onChange={onYearChange}
+            />
+          </label>
+          <input type="submit" value="Search" />
+        </form>
+        <Pagination
+          movie={movie}
+          year={year}
+          data={data}
+          setData={setData}
+          page={page}
+          setPage={setPage}
+        />
+        {data.map((info) => (
+          <MovieInfo key={info.imdbIb} data={info} />
+        ))}
+      </div>
+    );
+  }
   return (
     <div>
       <form onSubmit={onSubmit}>
@@ -64,9 +105,21 @@ const FirstTab = () => {
         </label>
         <input type="submit" value="Search" />
       </form>
-      {data.map((info) => (
-        <MovieInfo key={info.imdbIb} data={info} />
-      ))}
+      <Pagination
+        movie={movie}
+        year={year}
+        data={data}
+        setData={setData}
+        page={page}
+        setPage={setPage}
+      />
+      <div>
+        {data === undefined ? (
+          <div>Nothing to see</div>
+        ) : (
+          <div>Search to see</div>
+        )}
+      </div>
     </div>
   );
 };
