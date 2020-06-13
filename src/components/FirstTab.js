@@ -76,7 +76,6 @@ const FirstTab = (props) => {
           state={{
             modal: true,
           }}
-          data={data}
         >
           More Info about movie
         </Link>

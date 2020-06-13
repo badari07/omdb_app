@@ -12,9 +12,12 @@
   "dependencies": {
     "axios": "^0.19.2",
     "bootstrap": "^4.5.0",
+    "dotenv": "^8.2.0",
     "gatsby": "^2.23.3",
     "gatsby-plugin-modal-routing": "^1.1.0",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-modal": "^3.11.2",
+    "styled-components": "^5.1.1"
   }
 }
