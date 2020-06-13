@@ -4,13 +4,19 @@ import { Link } from "gatsby";
 const Header = () => {
   return (
     <div>
-      <header>
-        <Link to="/">Omdb App</Link>
+      <header className="navbar navbar-light bg-light">
+        <Link className="navbar-brand" to="/">
+          Omdb App
+        </Link>
       </header>
       <nav>
-        <Link to="/dashboard/first">first</Link>
+        <Link className="navbar-brand" to="/dashboard/first">
+          first
+        </Link>
 
-        <Link to="/dashboard/second">second</Link>
+        <Link className="navbar-brand" to="/dashboard/second">
+          second
+        </Link>
       </nav>
     </div>
   );

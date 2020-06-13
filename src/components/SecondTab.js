@@ -34,32 +34,38 @@ const SecondTab = () => {
     return (
       <div>
         <form onSubmit={onSubmit}>
-          <label htmlFor="movie">
-            Movie Title:
-            <input
-              required
-              type="text"
-              name="movie title"
-              id="movie"
-              placeholder="movie title"
-              value={movie}
-              onChange={onMovieChange}
-            />
-          </label>
-          <label htmlFor="year">
-            {" "}
-            Year:
-            <input
-              required
-              type="number"
-              name="movie year"
-              id="year"
-              placeholder="year"
-              value={year}
-              onChange={onYearChange}
-            />
-          </label>
-          <input type="submit" value="Search" />
+          <div className="form-group">
+            <label htmlFor="movie">
+              Movie Title:
+              <input
+                className="form-control"
+                required
+                type="text"
+                name="movie title"
+                id="movie"
+                placeholder="movie title"
+                value={movie}
+                onChange={onMovieChange}
+              />
+            </label>
+          </div>
+          <div className="form-group">
+            <label htmlFor="year">
+              {" "}
+              Year:
+              <input
+                className="form-control"
+                required
+                type="number"
+                name="movie year"
+                id="year"
+                placeholder="year"
+                value={year}
+                onChange={onYearChange}
+              />
+            </label>
+            <input className="btn btn-primary" type="submit" value="Search" />
+          </div>
         </form>
         <Poster data={data} />
       </div>
@@ -68,34 +74,40 @@ const SecondTab = () => {
     return (
       <div>
         <form onSubmit={onSubmit}>
-          <label htmlFor="movie">
-            Movie Title:
-            <input
-              required
-              type="text"
-              name="movie title"
-              id="movie"
-              placeholder="movie title"
-              value={movie}
-              onChange={onMovieChange}
-            />
-          </label>
-          <label htmlFor="year">
-            {" "}
-            Year:
-            <input
-              required
-              type="number"
-              name="movie year"
-              id="year"
-              placeholder="year"
-              value={year}
-              onChange={onYearChange}
-            />
-          </label>
-          <input type="submit" value="Search" />
+          <div className="form-group">
+            <label htmlFor="movie">
+              Movie Title:
+              <input
+                className="form-control"
+                required
+                type="text"
+                name="movie title"
+                id="movie"
+                placeholder="movie title"
+                value={movie}
+                onChange={onMovieChange}
+              />
+            </label>
+          </div>
+          <div className="form-group">
+            <label htmlFor="year">
+              {" "}
+              Year:
+              <input
+                className="form-control"
+                required
+                type="number"
+                name="movie year"
+                id="year"
+                placeholder="year"
+                value={year}
+                onChange={onYearChange}
+              />
+            </label>
+            <input className="btn btn-primary" type="submit" value="Search" />
+          </div>
         </form>
-        <div>no poster</div>
+        <h1> Search to see poster</h1>
       </div>
     );
   }

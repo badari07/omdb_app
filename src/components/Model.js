@@ -16,7 +16,7 @@ const ModalExamplePage = () => (
           )}
 
           <h2>Modal Page</h2>
-          <div>hi</div>
+          <h2>hi</h2>
 
           <Link to="/">Go back to the homepage</Link>
         </div>
